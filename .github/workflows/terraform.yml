@@ -36,7 +36,6 @@ jobs:
       - uses: hashicorp/setup-terraform@v4
       - run: terraform init -backend-config="key=staging.tfstate" #create a dev env state file 
       - run: terraform apply -auto-approve -var-file=envs/staging.tfvars
-      - run: terraform destroy -auto-approve
       - run: terraform destroy -auto-approve -var-file=envs/staging.tfvars
 
   prod:
